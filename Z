@@ -1,0 +1,14 @@
+
+name: Windows Runner Check
+
+on:
+  workflow_dispatch:
+
+jobs:
+  windows-check:
+    runs-on: windows-latest
+    steps:
+      - name: Check Windows
+        run: |
+          Write-Host "Windows Runner is working"
+          Get-ComputerInfo | Select-Object WindowsProductName, WindowsVersion
